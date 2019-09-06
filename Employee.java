@@ -1,11 +1,10 @@
 package com.oracle;
 
-import java.io.Serializable;
-
-public class Employee implements Serializable{
+public class Employee {
     private int id;
     private String name;
     private double salary;
+    private Address address;//every time employee is accessed address is also accessed
 
     public void setId(int id) {
         this.id = id;
@@ -31,9 +30,19 @@ public class Employee implements Serializable{
         return salary;
     }
 
-    public Employee(int id, String name, double salary) {
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public Employee(int id, String name, double salary, Address address) {
         this.id = id;
         this.name = name;
         this.salary = salary;
+        this.address = address;
     }
+
 }
